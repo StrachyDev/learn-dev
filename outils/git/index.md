@@ -1,3 +1,7 @@
+---
+title: Git
+---
+
 # Git
 
 ## Utilité
@@ -10,7 +14,7 @@ Il existe **deux endroits** où sont stockés les versions :
 - La version **mutualisée** et généralisée, sur un serveur distant,
 - Une version **locale**, sur une station de travail.
 
-Le principe est le suivant : lorsqu'on développe notre projet, on développe toujours la version **locale**, et lorsqu'on a terminé d'apporter nos modifications, on met à jour la version **mutualisée**. Cela permet notamment à plusieurs personnes de travailler sur des fonctionnalités différentes sans courir le risque de casser la base de code, et si jamais c'est le cas, pouvoir restaurer une version précédante stable.
+Principe : [on développe toujours la version **locale**, et lorsqu'on a terminé d'apporter nos modifications, on met à jour la version **mutualisée**](# "Cela permet notamment à plusieurs personnes de travailler sur des fonctionnalités différentes sans courir le risque de casser la base de code, et si jamais c'est le cas, pouvoir restaurer une version précédante stable.").
 
 ## Jargon
 
@@ -22,7 +26,7 @@ Le principe est le suivant : lorsqu'on développe notre projet, on développe to
 
 ## Branches
 
-Si une grosse équipe sur un projet, il devient nécessaire de le diviser en plusieurs parties distinctes mais complémentaires pour en **faciliter la gestion**. Les branches sont la réponse à ce problème.
+Si une grosse équipe travaille sur un projet, il devient nécessaire de le diviser en plusieurs parties distinctes mais complémentaires pour en **faciliter la gestion**. Les branches sont la réponse à ce problème.
 
 La branche principale par défaut est nommée **master** *(maître)*.
 
@@ -30,8 +34,8 @@ La branche principale par défaut est nommée **master** *(maître)*.
 - Un **checkout** sélectionne une autre branche et met à jour notre version locale avec le contenu de cette même branche,
 - Un **merge** fusionne deux branches *(de potentiels conflits qu'il faudra gérer peuvent survenir)*.
 
-Imaginons notre projet comme un **arbre**.
-Chaque **point** est une **version du projet**,
+Imaginons notre projet comme un **arbre**.  
+Chaque **point** est une **version du projet**.  
 Chaque **branche** est une **liste de version** qui peuvent rentrer en collision mais permettent de **séparer le travail** en plusieurs équipes pour ensuite les fusionner.
 
 On nomme **head** *(tête)* le point sur lequel se trouve la version locale.
@@ -40,13 +44,13 @@ On nomme **head** *(tête)* le point sur lequel se trouve la version locale.
 
 Une commande git est systématiquement préfixée par **git**, suivi de la commande désirée, et éventuellement d'options et de paramètres.
 
-Les options sont des **indications** sur **comment exécuter la commande** (le *comment*).
-Les paramètres sont les **éléments** nécessaires au **fonctionnement de la commande** (le *quoi*).
+Les options sont des **indications** sur **comment** exécuter la commande (le *comment*).  
+Les paramètres sont les **composants** nécessaires au **fonctionnement** de la commande (le *quoi*).
 
 ### Exemple :
 
-git commit -m "Petit commit"
+``git commit -m "Petit commit"``
 
-- **git commit** est la **commande à exécuter**,
-- **-m** est une **option de la commande** permettant d'inclure un message dans le commit,
-- **"Petit commit"** est un **paramètre de la commande**, le message à inclure dans le commit.
+- **git commit** est la **commande** à exécuter,
+- **-m** est une **option**, ici permettant d'inclure un message dans le commit,
+- **"Petit commit"** est un **paramètre**, ici le message à inclure dans le commit.
