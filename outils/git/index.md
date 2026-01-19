@@ -47,7 +47,7 @@ Imaginons notre projet comme un **arbre**.
 Chaque **point** est une **version du projet**.  
 Chaque **branche** est une **liste de version**<abbr title="Elles peuvent cependant rentrer en collision les unes avec les autres">ⓘ</abbr>.
 
-On nomme **head** *(tête)* le point sur lequel se trouve la version locale.
+On nomme **head**<abbr title="En français : la tête">ⓘ</abbr> le point sur lequel se trouve la version locale.
 
 ## Commandes
 
