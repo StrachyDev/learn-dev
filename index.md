@@ -1,4 +1,3 @@
-# Learn dev (FR)
+# Apprendre les bases de la programmation, expliqué simplement.
 
-Apprendre les bases de la programmation, expliqué simplement.
-
+[Outils](outils/index.md)
