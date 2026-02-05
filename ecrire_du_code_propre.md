@@ -2,7 +2,7 @@
 title: Coder proprement
 ---
 
-# Coder proprement ; intelligemment et pertinemment pour économiser du temps et des maux de crâne (je vous le dis d'expérience là)
+# Coder proprement ; intelligemment et pertinemment pour économiser du temps et des maux de crâne (en toute modestie)
 
 ## Sommaire
 
@@ -335,11 +335,11 @@ Vous êtes gagnant au long terme.
 
 ## III. Relecture et refactorisation du code
 
-### 1. Problèmes de logique
-
 On dit "refactor" lorsqu'on retravaille un bout de code pour par exemples en simplifier son usage, l'optimiser, le restructurer, ...
 
-Dans notre code, on se rend compte qu'utiliser la fonction CoordonneesAIndice est inutile car cela revient à retrouver i depuis les coordonnées x et y. Hors, on connait i, donc les deux calculs sont inutiles.
+### 1. Problèmes de logique
+
+Dans notre code, on se rend compte qu'utiliser la fonction CoordonneesAIndice est inutile car cela revient à retrouver i depuis les coordonnées x et y. Or, on connait i, donc les deux calculs sont inutiles.
 
 On peut donc simplifier comme suit :
 
