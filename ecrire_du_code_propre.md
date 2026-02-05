@@ -4,6 +4,23 @@ title: Coder proprement
 
 # Coder proprement ; intelligemment et pertinemment pour économiser du temps et des maux de crâne (je vous le dis d'expérience là)
 
+## Sommaire
+
+- [Organiser son code intelligemment](#utilité)
+- [Fonctionnement](#i-organiser-son-code-intelligemment)
+    - [Dé-indentation](#1-dé-indentation)
+    - [Espacer son code](#2-espacer-son-code)
+- [Nommer pertinemment](#ii-nommer-pertinemment)
+    - [Les fonctions et procédures](#1-les-fonctions-et-procédures)
+    - [Les variables](#2-les-variables)
+    - [Les structures](#3-les-structures)
+- [Relecture et refactorisation du code](#iii-relecture-et-refactorisation-du-code)
+    - [Problèmes de logique](#1-problèmes-de-logique)
+    - [Répétitions](#2-répétitions)
+    - [Touches personnelles](#3-touches-personnelles)
+- [Note](#iv-note)
+- [Fin](#v-fin)
+
 ## I. Organiser son code intelligemment
 
 ### 1. Dé-indentation
@@ -87,11 +104,11 @@ Plutôt difficile de repérer les différentes parties du code, n'est-ce pas ?
 - Où est-ce que j'ajoute le produit à la matrice ?
 - Et puis à quoi correspond l'ajout à v dans la double boucle ?
 
-Des questions que vous vous poserez en lisant ce code après une longue période et en l'ayant oublié.
+Des questions que vous vous poserez en lisant ce code après une longue période et en l'ayant oublié.\\
 Des questions qui vous feront perdre un temps précieux et qui aurait pu servir à bien d'autres utilités.
 
-Pour cela,  e  s  p  a  c  e  z  votre code.
-Ce sera déjà un peu mieux par la suite, vous verrez.
+Pour cela,  e  s  p  a  c  e  z  votre code.\\
+Ce sera déjà un peu mieux par la suite, vous verrez.\\
 Regardez :
 
 ```c
@@ -118,25 +135,26 @@ matrix_t* mMat(matrix_t *A, matrix_t *B) {
 }
 ```
 
-Ahh ! On respire.
+Ahh ! On respire.\\
 On arrive déjà mieux à discerner distinctement chaque partie : en premier les tests, ensuite les déclarations et initialisations, puis la boucle principale, dans laquelle on déclare et initialise, puis la seconde boucle, etc..
 
 Mais on peut faire mieux.
 
 ## II. Nommer pertinemment
 
-Le code que l'on écrit est subjectif et est sujet à changer tout comme le développeur tout au long de sa vie.
-Le problème est lorsqu'on a commencé à travailler en groupe et que les programmeurs ont dû lire le code des autres et se familiariser avec.
-C'est vite devenu un cauchemar car ils ont dû comprendre réellement le code au lieu que cela soit instinctif et au lieu de travailler dessus, une perte de temps phénoménale.
+Le code que l'on écrit est subjectif et est sujet à changer tout comme le développeur tout au long de sa vie.\\
+Le problème est lorsqu'on a commencé à travailler en groupe et que les programmeurs ont dû lire le code des autres et se familiariser avec.\\
+C'est vite devenu un cauchemar car ils ont dû comprendre réellement le code au lieu que cela soit instinctif et au lieu de travailler dessus : une perte de temps phénoménale.
 
 Pour résoudre ce problème, on a créé des conventions de nommage.
 
 Il en existe des tas, mais parmi les plus connues :
+
 - le snake_case (chaque mot espacé d'un underscore "_")
 - le PascalCase (chaque mot commence par une majuscule)
 - le camelCase (chaque mot commence par une majuscule, excepté le premier)
 
-Elles sont propres à certaines entreprises, mais aussi de langages de programmations (ou alors sont libres de choix pour certains).
+Elles sont propres à certaines entreprises, mais aussi à certains langages de programmations.
 
 Nous utiliserons la convention de nommage camelCase et les noms seront en français (il est important de le définir dès le début pour éviter le franglish ou des mixes de convention).
 
@@ -198,7 +216,7 @@ matrix_t* produitMatriciel(matrix_t *A, matrix_t *B) { // <--
 }
 ```
 
-C'est mieux, non ?
+C'est mieux, non ?\\
 Poursuivons avec les fonctions et procédures utilisées :
 
 ```c
@@ -265,7 +283,7 @@ En modifiant le type matrix_t :
 typedef struct matrix {
     int nl;
     int ncbCol;
-	double *v;
+    double *v;
 } matrix_t;
 ```
 
@@ -275,7 +293,7 @@ qui devient :
 typedef struct matrix {
     int nombreLignes;   // ou nbLig
     int nombreColonnes; // ou nbCol
-	double *elements;   // ou elts
+    double *elements;   // ou elts
 } matrix_t;
 ```
 
@@ -305,14 +323,14 @@ matrix_t* produitMatriciel(matrix_t *A, matrix_t *B) {
 }
 ```
 
-Pas mal,
+Pas mal,\\
 et c'est pas terminé.
 
-PS¹: Vous pouvez faire des sacrifices de lisibilité pour gagner en place, mais uniquement si vous comprenez toujours le code de manière simple et rapide.
-Par exemple, en écrivant "nbLig" dans matrix_t au lieu de "nombreLignes", on peut toujours comprendre que ça désigne le nombre de lignes de la matrice. Le choix de nommage reste votre décision, et seul vous pouvez déterminer si tel ou tel nom est approprié, trop peu ou excessivement informatif. Les goûts et les couleurs.
+PS¹: Vous pouvez faire des sacrifices de lisibilité pour gagner en place, mais uniquement si vous comprenez toujours le code de manière simple et rapide.\\
+Par exemple, en écrivant "nbLig" dans matrix_t au lieu de "nombreLignes", on peut toujours comprendre que ça désigne le nombre de lignes de la matrice. Le choix de nommage reste votre décision, et seul vous peut déterminer si tel ou tel nom est approprié, trop peu ou excessivement informatif. Les goûts et les couleurs.
 
-PS²: N'ayez pas peur d'avoir des noms de variables plus lisibles au prix de la longueur. Les éditeurs de code modernes proposent des complétions de noms, lorsque vous commencez à taper par exemple "nomV" pour "nomVariable", il vous proposera certainement "nomVariable", que vous pourrez valider communément avec la touche "Tab".
-Vous perdez très peu de temps à écrire votre code en comparaison avec essayer de le re-comprendre des semaines voire des mois après.
+PS²: N'ayez pas peur d'avoir des noms de variables plus lisibles au prix de la longueur. Les éditeurs de code modernes proposent des complétions de noms, lorsque vous commencez à taper par exemple "nomV" pour "nomVariable", il vous proposera certainement "nomVariable", que vous pourrez valider communément avec la touche "Tab".\\
+Vous perdez très peu de temps à écrire votre code en comparaison avec essayer de le re-comprendre des semaines voire des mois après.\\
 Vous êtes gagnant au long terme.
 
 ## III. Relecture et refactorisation du code
@@ -351,7 +369,7 @@ matrix_t* produitMatriciel(matrix_t *A, matrix_t *B) {
 
 ### 2. Répétitions
 
-Dans notre dernier exemple, nous n'avons pas vraiment de problèmes de répétitions.
+Dans notre dernier exemple, nous n'avons pas vraiment de problèmes de répétitions.\\
 Mais si on devait garder CoordonneesAIndice, on aurait pu cacher (= mettre en cache, stocker sous forme de variable) son résultat, étant donné qu'on l'utilise deux fois. Cela permet d'économiser un calcul et de gagner en efficacité !
 
 Si on devait le faire pour x ou y raisons, le code serait devenu :
@@ -381,7 +399,7 @@ matrix_t* produitMatriciel(matrix_t *A, matrix_t *B) {
 }
 ```
 
-Attention : il ne faut pas pas exagérer le fait de ne rien répéter, sinon vous transformerez votre code en code spaghetti (code qui est entremêlé, par exemple dont A dépend de B mais B dépend de A, avec C dépendant des deux, et la liste continue), ce qui est insupportable à maintenir dans le futur. Utilisé localement comme ici et à courte échelle fait économiser du temps à la fois d'écriture, d'exécution, et de lecture, mais trop et globalement provoque exactement l'inverse.
+Attention : il ne faut pas pas exagérer le fait de ne rien répéter, sinon vous transformerez votre code en code spaghetti (code qui est entremêlé, par exemple : A dépend de B mais B dépend de A, avec C dépendant des deux, etc.), ce qui est insupportable à maintenir dans le futur. Utilisé localement comme ici et à courte échelle fait économiser du temps à la fois d'écriture, d'exécution, et de lecture, mais trop et globalement provoque exactement l'inverse.
 
 ### 3. Touches personnelles
 
@@ -419,13 +437,13 @@ La seule chose que j'ai subjectivement modifié est d'avoir sauté des lignes po
 
 Tout ça pour vous dire que votre code est avant tout une matière de goûts personnels et que vous avez librement le droit de l'organiser et le structurer comme bon vous semble, ne restez pas figés sur les manières dont les professeurs écrivent ou les gens sur internet, trouvez le style qui vous plaît et vous aide à le lire plus aisément.
 
-## 4. Note
+## IV. Note
 
 Bien sûr, ce ne sont pas les seules manières d'améliorer son code ; ce ne sont que des exemples de ce qu'il est possible de faire. Libre à vous de trouver d'autres façons d'améliorer votre code, et ce dans n'importe quel aspect quel qu'il soit !
 
-## 5. Fin
+## V. Fin
 
-Merci d'avoir suivi de petit cours, si vous avez des suggestions n'hésitez pas.
+Merci d'avoir suivi de petit cours, si vous avez des suggestions n'hésitez pas.\\
 N'hésitez pas également à le relire, autant de fois que nécessaires, afin d'intégrer au mieux les notions abordées.
 
 Programmez bien les loulous
