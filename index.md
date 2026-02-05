@@ -6,4 +6,5 @@ title: Accueil
 
 - [Outils](outils/index.md)
 - [Coder proprement et efficacement](ecrire_du_code_propre.md)
+- [Avertissement sur les commentaires](avertissement_commentaires.md)
 - [Entrée / Entrée & Sortie / Sortie en C](entree_entree_et_sortie_sortie.md)
