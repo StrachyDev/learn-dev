@@ -2,8 +2,8 @@
 title: Accueil
 ---
 
-# Apprendre les bases de la programmation, expliqué simplement (Programme L1 Informatique).
+# Apprendre les bases de la programmation, expliqué simplement (surtout mais pas limité à : Programme L1 Informatique).
 
-[Outils](outils/index.md)
-[Ecrire du code proprement](ecrire_du_code_propre.md)
-[Distinctions Entrée / Entrée & Sortie / Sortie en C](distinctions_entree_sortie_entree_sortie.md)
+- [Outils](outils/index.md)\\
+- [Coder proprement et efficacement](ecrire_du_code_propre.md)\\
+- [Entrée / Entrée & Sortie / Sortie en C](entree_entree_et_sortie_sortie.md)\\
