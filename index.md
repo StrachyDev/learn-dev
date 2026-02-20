@@ -5,6 +5,7 @@ title: Accueil
 # Apprendre les bases de la programmation, expliqué simplement (surtout mais pas limité à : Programme L1 Informatique).
 
 - [Outils](outils/index.md)
+- [Glossaire: notions et jargon en programmation](glossaire_notions_et_jargon_dev.md)
 - [Coder proprement et efficacement](ecrire_du_code_propre.md)
 - [Avertissement sur les commentaires](avertissement_commentaires.md)
 - [Entrée / Entrée & Sortie / Sortie en C](entree_entree_et_sortie_sortie.md)
